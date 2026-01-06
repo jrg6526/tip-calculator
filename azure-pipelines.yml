@@ -9,9 +9,6 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-variables:
-  resultFile: '**/TEST-*.xml'
-
 steps:
 - task: ArchiveFiles@2
   inputs:
@@ -21,5 +18,5 @@ steps:
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: JUnit
-    testResultsFiles: ${{ variables.resultFile }}
+    testResultsFiles: Agent.TempDirectory
 - script: echo Hello, world!
