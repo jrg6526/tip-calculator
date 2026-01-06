@@ -18,5 +18,5 @@ steps:
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: JUnit
-    testResultsFiles: Agent.TempDirectory
+    testResultsFiles: $(Agent.TempDirectory)
 - script: echo Hello, world!
