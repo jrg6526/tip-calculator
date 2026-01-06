@@ -21,5 +21,5 @@ steps:
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: JUnit
-    testResultsFiles: variables.resultFile
+    testResultsFiles: ${{ variables.resultFile }}
 - script: echo Hello, world!
