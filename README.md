@@ -1,3 +1,5 @@
+
+[![Build Status](https://dev.azure.com/DevOpsGibbsOrg/DevOpsGibbsProject/_apis/build/status%2Fjrg6526.tip-calculator?branchName=main)](https://dev.azure.com/DevOpsGibbsOrg/DevOpsGibbsProject/_build/latest?definitionId=3&branchName=main)
 # About Tip Calculator
 This page simulates the calculation of a tip associated with the cost of a meal.
 
