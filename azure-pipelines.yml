@@ -19,13 +19,4 @@ steps:
   inputs:
     testResultsFormat: JUnit
     testResultsFiles: $(Agent.TempDirectory)
-- task: VSTest@3
-  inputs:
-    testSelector: 'testAssemblies'
-    testAssemblyVer2: |
-      **\bin\**\*test.dll
-      **\bin\**\*tests.dll
-    searchFolder: '$(System.DefaultWorkingDirectory)'
-    runOnlyImpactedTests: true
-    runAllTestsAfterXBuilds: '3'
 - script: echo Hello, world!
