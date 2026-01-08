@@ -38,6 +38,14 @@ jobs:
       testResultsFormat: JUnit
       testResultsFiles: $(Agent.TempDirectory)
   - script: echo Hello, world!
+
+  - task: DotNetCoreCLI@2
+    displayName: Test
+    inputs:
+      command: test
+      projects: '**/*Tests/*Tests.csproj'
+      useGlobalJson: true
+      arguments: '--no-build --filter "$(targetTestsFilter)"'
   
   - task: PublishCodeCoverageResults@2
     inputs:
