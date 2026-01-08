@@ -7,16 +7,34 @@ trigger:
 - main
 
 pool:
-  vmImage: "windows-latest"
+  vmImage: 'windows-latest'
 
-steps:
-- task: ArchiveFiles@2
-  inputs:
-    rootFolderOrFile: '$(build.sourcesDirectory)'
-    includeRootFolder: false
-- task: PublishBuildArtifacts@1
-- task: PublishTestResults@2
-  inputs:
-    testResultsFormat: JUnit
-    testResultsFiles: $(Agent.TempDirectory)
-- script: echo Hello, world!
+jobs:
+- job: 'ParallelTesting'
+  strategy:
+    parallel: 3
+  displayName: Run tests in parallel
+
+  steps:
+  - task: VSTest@3
+    inputs:
+      testSelector: 'testAssemblies'
+      testAssemblyVer2: |
+        **\bin\**\*test.dll
+        **\bin\**\*tests.dll
+      searchFolder: '$(System.DefaultWorkingDirectory)'
+      runOnlyImpactedTests: true
+      runAllTestsAfterXBuilds: '3'
+      
+  - task: ArchiveFiles@2
+    inputs:
+      rootFolderOrFile: '$(build.sourcesDirectory)'
+      includeRootFolder: false
+
+  - task: PublishBuildArtifacts@1
+
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFormat: JUnit
+      testResultsFiles: $(Agent.TempDirectory)
+  - script: echo Hello, world!
