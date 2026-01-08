@@ -26,5 +26,6 @@ steps:
       **\bin\**\*test.dll
       **\bin\**\*tests.dll
     searchFolder: '$(System.DefaultWorkingDirectory)'
-    runOnlyImpactedTests: false
+    runOnlyImpactedTests: true
+    runAllTestsAfterXBuilds: '3'
 - script: echo Hello, world!
