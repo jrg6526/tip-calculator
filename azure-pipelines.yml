@@ -38,3 +38,7 @@ jobs:
       testResultsFormat: JUnit
       testResultsFiles: $(Agent.TempDirectory)
   - script: echo Hello, world!
+  
+  - task: PublishCodeCoverageResults@2
+    inputs:
+      summaryFileLocation: $(System.DefaultWorkingDirectory)
