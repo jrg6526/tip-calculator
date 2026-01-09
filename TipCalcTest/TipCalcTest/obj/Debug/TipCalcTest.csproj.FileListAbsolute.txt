@@ -1,0 +1,7 @@
+C:\Users\4800636526\Documents\TipCalcTest\TipCalcTest\obj\Debug\TipCalcTest.csproj.AssemblyReference.cache
+C:\Users\4800636526\Documents\TipCalcTest\TipCalcTest\obj\Debug\TipCalcTest.csproj.CoreCompileInputs.cache
+C:\Users\4800636526\Documents\TipCalcTest\TipCalcTest\bin\Debug\TipCalcTest.exe.config
+C:\Users\4800636526\Documents\TipCalcTest\TipCalcTest\bin\Debug\TipCalcTest.exe
+C:\Users\4800636526\Documents\TipCalcTest\TipCalcTest\bin\Debug\TipCalcTest.pdb
+C:\Users\4800636526\Documents\TipCalcTest\TipCalcTest\obj\Debug\TipCalcTest.exe
+C:\Users\4800636526\Documents\TipCalcTest\TipCalcTest\obj\Debug\TipCalcTest.pdb
