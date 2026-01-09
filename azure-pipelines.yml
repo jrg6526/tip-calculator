@@ -40,10 +40,17 @@ jobs:
   - script: echo Hello, world!
 
   - task: DotNetCoreCLI@2
+    displayName: Build
+    inputs:
+      command: build
+      projects: '**/*.csproj'
+      useGlobalJson: true
+
+  - task: DotNetCoreCLI@2
     displayName: Test
     inputs:
       command: test
-      projects: '**TipCalcTest/UnitTestProject1/TipUnitTest.csproj'
+      projects: '**/TipCalcTest/UnitTestProject1/TipUnitTest.csproj'
       useGlobalJson: true
       arguments: '--no-build --filter "$(targetTestsFilter)"'
   
