@@ -33,12 +33,6 @@ jobs:
 
   - task: PublishBuildArtifacts@1
 
-  - task: PublishTestResults@2
-    inputs:
-      testResultsFormat: JUnit
-      testResultsFiles: $(Agent.TempDirectory)
-  - script: echo Hello, world!
-
   - task: DotNetCoreCLI@2
     displayName: Build
     inputs:
@@ -53,6 +47,13 @@ jobs:
       projects: '**/TipCalcTest/UnitTestProject1/TipUnitTest.csproj'
       useGlobalJson: true
       arguments: '--no-build'
+
+  - task: PublishTestResults@2
+    inputs:
+      testResultsFormat: JUnit
+      testResultsFiles: $(Agent.TempDirectory)
+      
+  - script: echo Hello, world!
   
   - task: PublishCodeCoverageResults@2
     inputs:
