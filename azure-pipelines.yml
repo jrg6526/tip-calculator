@@ -52,7 +52,7 @@ jobs:
       command: test
       projects: '**/TipCalcTest/UnitTestProject1/TipUnitTest.csproj'
       useGlobalJson: true
-      arguments: '--no-build --filter "$(targetTestsFilter)"'
+      arguments: '--no-build'
   
   - task: PublishCodeCoverageResults@2
     inputs:
